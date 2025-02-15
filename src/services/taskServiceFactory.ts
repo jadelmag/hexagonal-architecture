@@ -3,15 +3,11 @@ import { ApiTaskRepository } from "@/infraestructure/taskRepository";
 import { TaskService } from "@/services/taskService";
 
 export class TaskServiceFactory {
-  static create() {
-    const apiTaskRepository = new ApiTaskRepository();
-    return new TaskService(apiTaskRepository);
-  }
+  static create(useApi: boolean) {
+    const taskRepository = useApi
+      ? new ApiTaskRepository() 
+      : new LocalStorageTaskRepository();
 
-  static local() {
-    const localTaskRepository = new LocalStorageTaskRepository();
-    return new TaskService(localTaskRepository);
+    return new TaskService(taskRepository);
   }
 }
-
-

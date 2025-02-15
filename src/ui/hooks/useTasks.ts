@@ -6,7 +6,7 @@ import { NewTask, Task } from "@/domain/task/task";
 import { TaskServiceFactory } from "@/services/taskServiceFactory";
 import { useEffect, useState } from "react";
 
-const taskService = TaskServiceFactory.create();
+const taskService = TaskServiceFactory.create(true);
 
 export const useTask = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -25,7 +25,7 @@ export const useTask = () => {
   const handleUpdateTask = async (task: Task) => {
     const updatedTask: Task = { ...task, completed: !task.completed } as Task;
     const updated: Task = await updateTask(taskService, task.id, updatedTask );
-    setTasks(tasks.map((t) => (t.id === task.id ? updated : t)));
+    setTasks(tasks.map((t: Task) => (t.id === task.id ? updated : t)));
   };
 
   const handleGetAllTasks = async () => {
