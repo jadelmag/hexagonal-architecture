@@ -1,5 +1,5 @@
 import { NewTask, Task } from "@/domain/task/task";
-import { TaskRepositoryInterface } from "@/port/taskRepository";
+import { TaskRepositoryInterface } from "@/ports/taskRepository";
 
 export class TaskService implements TaskRepositoryInterface {
   constructor(private taskRepository: TaskRepositoryInterface) {}

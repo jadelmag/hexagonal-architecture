@@ -1,5 +1,5 @@
 import { NewTask, Task } from "@/domain/task/task";
-import { TaskRepositoryInterface } from "@/port/taskRepository";
+import { TaskRepositoryInterface } from "@/ports/taskRepository";
 import { generateNumberId } from "@/utils/generateId";
 
 export class LocalStorageTaskRepository implements TaskRepositoryInterface {

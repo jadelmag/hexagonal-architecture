@@ -5,7 +5,7 @@ import {
   tasksResponseSchema,
 } from "@/domain/task/task";
 import { HttpStatus } from "@/interfaces/status.code.interface";
-import { TaskRepositoryInterface } from "@/port/taskRepository";
+import { TaskRepositoryInterface } from "@/ports/taskRepository";
 import axios, { AxiosError, AxiosResponse } from "axios";
 
 export class ApiTaskRepository implements TaskRepositoryInterface {
