@@ -1,11 +1,12 @@
 import { z } from 'zod';
 
 const taskSchema = z.object({
-  id: z.number(),
-  userId: z.number(),
-  title: z.string(),
+  id: z.number().int().positive(),
+  userId: z.number().int().positive(),
+  title: z.string().min(3).max(100),
   completed: z.boolean(),
 });
+
 const tasksResponseSchema = z.array(taskSchema);
 
 export type Task = z.infer<typeof taskSchema>;
