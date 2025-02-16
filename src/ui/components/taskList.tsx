@@ -24,9 +24,10 @@ const TaskList = ({ tasks, onRemoveTask, onUpdateTask }: Props) => {
               className="h-6 aspect-square cursor-pointer"
               onChange={() => onUpdateTask(task)}
               type="checkbox"
+              aria-label={task.title}
               checked={task.completed}
             />
-            <button onClick={() => onRemoveTask(task.id)}>
+            <button aria-label={task.title} onClick={() => onRemoveTask(task.id)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
