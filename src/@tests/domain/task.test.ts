@@ -1,4 +1,8 @@
-import { newTaskSchema, taskSchema, tasksResponseSchema } from "@/domain/task/task";
+import {
+  newTaskSchema,
+  taskSchema,
+  tasksResponseSchema,
+} from "@/domain/task/task";
 import { describe, expect, it } from "vitest";
 
 describe("taskSchema", () => {

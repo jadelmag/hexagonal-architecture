@@ -17,7 +17,7 @@ describe("updateTask", () => {
     userId: 1,
     title: "mock task",
     completed: true,
-  }
+  };
 
   it("should update current task", async () => {
     const mockTaskService = {
@@ -40,7 +40,11 @@ describe("updateTask", () => {
     };
 
     await expect(
-      updateTask(mockTaskService as unknown as TaskService, mockTask.id, mockTask)
+      updateTask(
+        mockTaskService as unknown as TaskService,
+        mockTask.id,
+        mockTask
+      )
     ).rejects.toThrow("Error updating task");
   });
 });
