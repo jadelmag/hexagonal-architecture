@@ -1,3 +1,5 @@
+https://stackoverflow.com/questions/79441650/understanding-architecture-hexagonal-with-react
+
 
 # Arquitectura Hexagonal con React
 
