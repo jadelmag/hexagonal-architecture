@@ -7,7 +7,6 @@ const mockHandleCreateTask = vi.fn();
 const mockHandleRemoveTask = vi.fn();
 const mockHandleUpdateTask = vi.fn();
 
-// Mock de useTask hook
 vi.mock("@/ui/hooks/useTasks", () => ({
   useTask: vi.fn(() => ({
     tasks: [{ id: 1, userId: 1, title: "Test Task", completed: false }],
@@ -30,7 +29,7 @@ describe("TaskPage", () => {
 
     const inputPlaceholder = screen.getByPlaceholderText("give me a task...");
     expect(inputPlaceholder).toBeInTheDocument();
-    
+
     const taskItem = screen.getByText("Test Task");
     expect(taskItem).toBeInTheDocument();
   });

@@ -1,5 +1,6 @@
 import { NewTask, Task } from "@/domain/task/task";
 import { LocalStorageTaskRepository } from "@/infraestructure/localStorageTaskRepository";
+import "@testing-library/jest-dom";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 describe("LocalStorageTaskRepository", () => {

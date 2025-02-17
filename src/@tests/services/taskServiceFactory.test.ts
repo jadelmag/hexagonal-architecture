@@ -2,6 +2,7 @@ import { LocalStorageTaskRepository } from "@/infraestructure/localStorageTaskRe
 import { ApiTaskRepository } from "@/infraestructure/taskRepository";
 import { TaskService } from "@/services/taskService";
 import { TaskServiceFactory } from "@/services/taskServiceFactory";
+import "@testing-library/jest-dom";
 import { describe, expect, it, vi } from "vitest";
 
 describe("TaskServiceFactory", () => {

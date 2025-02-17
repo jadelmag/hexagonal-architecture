@@ -1,6 +1,7 @@
 import { NewTask, Task } from "@/domain/task/task";
 import { TaskRepositoryInterface } from "@/ports/taskRepository";
 import { TaskService } from "@/services/taskService";
+import "@testing-library/jest-dom";
 import { describe, expect, it, vi } from "vitest";
 
 describe("TaskService", () => {
