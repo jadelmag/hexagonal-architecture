@@ -42,5 +42,6 @@ export const useTask = () => {
     tasks,
     handleRemoveTask,
     handleUpdateTask,
+    handleGetAllTasks,
   };
 };
