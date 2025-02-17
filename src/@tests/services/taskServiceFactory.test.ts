@@ -1,5 +1,5 @@
+import { ApiTaskRepository } from "@/infraestructure/ApiTaskRepository";
 import { LocalStorageTaskRepository } from "@/infraestructure/localStorageTaskRepository";
-import { ApiTaskRepository } from "@/infraestructure/taskRepository";
 import { TaskService } from "@/services/taskService";
 import { TaskServiceFactory } from "@/services/taskServiceFactory";
 import "@testing-library/jest-dom";

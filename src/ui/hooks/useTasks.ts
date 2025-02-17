@@ -12,7 +12,8 @@ export const useTask = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   const handleCreateTask = async (task: NewTask, currentForm: HTMLFormElement) => {
-    const created: Task = await saveTask(taskService, task);
+    const created: Task | null = await saveTask(taskService, task);
+    if (!created) return;
     setTasks([...tasks, created]);
     currentForm.reset();
   };
@@ -24,7 +25,8 @@ export const useTask = () => {
 
   const handleUpdateTask = async (task: Task) => {
     const updatedTask: Task = { ...task, completed: !task.completed } as Task;
-    const updated: Task = await updateTask(taskService, task.id, updatedTask );
+    const updated: Task | null = await updateTask(taskService, task.id, updatedTask );
+    if (!updated) return;
     setTasks(tasks.map((t: Task) => (t.id === task.id ? updated : t)));
   };
 
